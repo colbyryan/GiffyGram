@@ -1,0 +1,18 @@
+{
+	"users": [
+        {
+            "Id": 1,
+            "Name": "Colby",
+            "Datejoined": 1630513631166,
+            "email": "email@gmail.com"
+        },
+        {
+            "Id": 2,
+            "Name": "Bryan",
+            "Datejoined": 1630513631166,
+            "email": "name@gmail.com"
+        }
+    ],
+	"posts": [],
+	"messages":[]
+}
