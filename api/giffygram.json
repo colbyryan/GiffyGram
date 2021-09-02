@@ -1,18 +1,42 @@
 {
-	"users": [
-        {
-            "Id": 1,
-            "Name": "Colby",
-            "Datejoined": 1630513631166,
-            "email": "email@gmail.com"
-        },
-        {
-            "Id": 2,
-            "Name": "Bryan",
-            "Datejoined": 1630513631166,
-            "email": "name@gmail.com"
-        }
-    ],
-	"posts": [],
-	"messages":[]
+  "users": [
+    {
+      "id": 1,
+      "Name": "Colby",
+      "Datejoined": 1630513631166,
+      "email": "email@gmail.com"
+    },
+    {
+      "id": 2,
+      "Name": "Bryan",
+      "Datejoined": 1630513631166,
+      "email": "name@gmail.com"
+    },
+    {
+      "Name": "susie",
+      "Datejoined": 1630513631166,
+      "email": "email2@gmail.com",
+      "id": 3
+    },
+    {
+      "Name": "Tyler",
+      "Datejoined": 1630513631166,
+      "email": "Tyler@gmail.com",
+      "id": 4
+    },
+    {
+      "Name": "Bryan",
+      "Datejoined": 1630513631166,
+      "email": "Bryan@gmail.com",
+      "id": 5
+    },
+    {
+      "Name": "Brenda",
+      "Datejoined": 1630513631166,
+      "email": "Brenda@gmail.com",
+      "id": 6
+    }
+  ],
+  "posts": [],
+  "messages": []
 }
