@@ -1,14 +1,10 @@
-export const getJoke = () => {
-    return fetch("https://icanhazdadjoke.com/", {
-        headers: {
-            Accept: "application/json"
-        }
-    })
+export const getUsers = () => {
+    return fetch("https://localhost8088")
     .then(response => response.JSON())
     .then(parsedResponse => {
-        console.log(parsedResponse.joke);
-        const result = parsedResponse.joke;
-        return result; 
+        console.log(parsedResponse.user);
+        // const result = parsedResponse.joke;
+        // return result; 
     })
 }
 
