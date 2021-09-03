@@ -1,18 +1,27 @@
 {
-	"users": [
-        {
-            "Id": 1,
-            "Name": "Colby",
-            "Datejoined": 1630513631166,
-            "email": "email@gmail.com"
-        },
-        {
-            "Id": 2,
-            "Name": "Bryan",
-            "Datejoined": 1630513631166,
-            "email": "name@gmail.com"
-        }
-    ],
-	"posts": [],
-	"messages":[]
+  "posts": [
+    {
+      "id": 1,
+      "userID" : 1,
+      "title" : "Laughing",
+      "imageURL" : "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif"
+    },
+    {
+      "id": 2,
+      "userID" : 2,
+      "title" : "Ron Swanson",
+      "imageURL" : "https://media.giphy.com/media/WdxgDkavCuY56Of9jq/giphy.gif"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
+
