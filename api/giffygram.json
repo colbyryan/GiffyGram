@@ -1,42 +1,27 @@
 {
-  "users": [
+  "posts": [
     {
       "id": 1,
-      "Name": "Colby",
-      "Datejoined": 1630513631166,
-      "email": "email@gmail.com"
+      "userID" : 1,
+      "title" : "Laughing",
+      "imageURL" : "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif"
     },
     {
       "id": 2,
-      "Name": "Bryan",
-      "Datejoined": 1630513631166,
-      "email": "name@gmail.com"
-    },
-    {
-      "Name": "susie",
-      "Datejoined": 1630513631166,
-      "email": "email2@gmail.com",
-      "id": 3
-    },
-    {
-      "Name": "Tyler",
-      "Datejoined": 1630513631166,
-      "email": "Tyler@gmail.com",
-      "id": 4
-    },
-    {
-      "Name": "Bryan",
-      "Datejoined": 1630513631166,
-      "email": "Bryan@gmail.com",
-      "id": 5
-    },
-    {
-      "Name": "Brenda",
-      "Datejoined": 1630513631166,
-      "email": "Brenda@gmail.com",
-      "id": 6
+      "userID" : 2,
+      "title" : "Ron Swanson",
+      "imageURL" : "https://media.giphy.com/media/WdxgDkavCuY56Of9jq/giphy.gif"
     }
   ],
-  "posts": [],
-  "messages": []
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
+
