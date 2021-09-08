@@ -1,5 +1,5 @@
 // Can you explain what is being imported here?
-import { getPosts } from "./data/DataManager.js"
+import { getPosts, usePostCollection } from "./data/DataManager.js"
 import { PostList } from "./feed/PostList.js"
 import { NavBar } from "./Nav/NavBar.js";
 import { FooterBar } from "./Footer/Footer.js";
@@ -17,7 +17,7 @@ const showNavBar = () => {
 }
 
 const showFooterBar = () => {
-	const footerElement = doctument.querySelector("footer")
+	const footerElement = document.querySelector("footer")
 	footerElement.innerHTML = FooterBar();
 }
 const applicationElement = document.querySelector(".giffygram");
@@ -35,11 +35,33 @@ applicationElement.addEventListener("click", (event) => {
 		console.log("the id is", event.target.id.split("--")[1])
 	}
 })
+applicationElement.addEventListener("change", event => {
+	if (event.target.id === "yearSelection") {
+	  const yearAsNumber = parseInt(event.target.value)
+	  console.log(`User wants to see posts since ${yearAsNumber}`)
+	  //invoke a filter function passing the year as an argument
+	  showFilteredPosts(yearAsNumber);
+	}
+  })
+  
+  const showFilteredPosts = (year) => {
+	//get a copy of the post collection
+	const epoch = Date.parse(`01/01/${year}`);
+	//filter the data
+	const filteredData = usePostCollection().filter(singlePost => {
+	  if (singlePost.timestamp >= epoch) {
+		return singlePost
+	  }
+	})
+	const postElement = document.querySelector(".postList");
+	postElement.innerHTML = PostList(filteredData);
+  }
 
 
 const startGiffyGram = () => {
     showPostList();
     showNavBar();
+	showFooterBar();
 }
 
 startGiffyGram();
