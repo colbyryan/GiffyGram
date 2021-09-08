@@ -10,4 +10,3 @@ export const PostList = (allPosts) => {
 		return postHTML;
 	
 }
-

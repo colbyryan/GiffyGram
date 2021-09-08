@@ -7,8 +7,6 @@
 //         // return result; 
 //     })
 // }
-
-
 export const getLoggedInUser = () => {
     return getLoggedInUser;
 }
