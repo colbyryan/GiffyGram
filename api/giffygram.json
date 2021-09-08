@@ -2,15 +2,49 @@
   "posts": [
     {
       "id": 1,
-      "userID" : 1,
-      "title" : "Laughing",
-      "imageURL" : "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif"
+      "userID": 1,
+      "title": "Laughing",
+      "timestamp": 156169011812,
+      "imageURL": "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif"
     },
     {
       "id": 2,
-      "userID" : 2,
-      "title" : "Ron Swanson",
-      "imageURL" : "https://media.giphy.com/media/WdxgDkavCuY56Of9jq/giphy.gif"
+      "userID": 2,
+      "title": "Ron Swanson",
+      "timestamp": 156169011812,
+      "imageURL": "https://media.giphy.com/media/WdxgDkavCuY56Of9jq/giphy.gif"
+    },
+    {
+      "title": "This Is Funny",
+      "imageURL": "https://media.giphy.com/media/J1rLvH8YizWFy/giphy.gif",
+      "description": "Meme",
+      "userId": 1,
+      "timestamp": 1631129225172,
+      "id": 3
+    },
+    {
+      "title": "Nice Meme",
+      "imageURL": "https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif",
+      "description": "Hello",
+      "userId": 1,
+      "timestamp": 1631129404774,
+      "id": 4
+    },
+    {
+      "title": "Harden",
+      "imageURL": "https://media.giphy.com/media/ywa589qjyKmr6NrHmg/giphy.gif",
+      "description": "This looks good!",
+      "userId": 1,
+      "timestamp": 1631129855999,
+      "id": 5
+    },
+    {
+      "title": "Nice",
+      "imageURL": "https://media.giphy.com/media/WJjLyXCVvro2I/giphy.gif",
+      "description": "No story ",
+      "userId": 1,
+      "timestamp": 1631130075385,
+      "id": 6
     }
   ],
   "comments": [
@@ -24,4 +58,3 @@
     "name": "typicode"
   }
 }
-
