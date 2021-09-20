@@ -1,13 +1,18 @@
-export const FooterBar = () => {
-    return `<div>
-                <label for="years">Posts Since:</label>
+export const Footer = () => {
 
-                <select name="Years" id="years">
-                    <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                    <option value="2019">2019</option>
-                    <option value="2018">2018</option>
+    // HTML to be returned to GiffyGram component
+    return `
+        <footer class="footer">
+            <div class="footer__item">
+                Posts since <select id="yearSelection">
+					<option>2021</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
                 </select>
+                <span id="postCount">0</span>
             </div>
-            <p class="footer-item">&copyCopyright 2021</p>`
+        </footer>
+    `
 }

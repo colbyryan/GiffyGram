@@ -1,25 +1,19 @@
-// export const getUsers = () => {
-//     return fetch("https://localhost8088")
-//     .then(response => response.JSON())
-//     .then(parsedResponse => {
-//         console.log(parsedResponse.user);
-//         // const result = parsedResponse.joke;
-//         // return result; 
-//     })
-// }
+const loggedInUser = {
+	id: 1,
+	name: "Brenda",
+	email: "brenda.long@nashvillesoftwareschool.com",
+	dateJoined: 1630513631166,
+}
+
 export const getLoggedInUser = () => {
-    return getLoggedInUser;
+	return loggedInUser;
 }
 
 export const getUsers = () => {
-    return fetch("http://localhost:8088/users")
-    .then(response => response.json())
+	return fetch("http://localhost:8088/users")
+	.then(response => response.json())
 }
 
-export const getPosts = () => {
-    return fetch("http://localhost:8088/posts")
-    .then(response => response.json())
-}
 let postCollection = [];
 
 export const usePostCollection = () => {
@@ -28,15 +22,36 @@ export const usePostCollection = () => {
   //The spread operator makes this quick work
   return [...postCollection];
 }
+
+export const getPosts = () => {
+	return fetch("http://localhost:8088/posts")
+	.then(response => response.json())
+	.then(parsedResponse => {
+		postCollection = parsedResponse;
+		return parsedResponse;
+	})
+}
+
 export const createPost = postObj => {
-    return fetch("http://localhost:8088/posts", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postObj)
+	return fetch("http://localhost:8088/posts", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(postObj)
   
-    })
-        .then(response => response.json())
+	}).then(response => response.json())
+  }
+
+  export const deletePost = postId => {
+	return fetch(`http://localhost:8088/posts/${postId}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": "application/json"
+		}
+  
+	})
+		.then(response => response.json())
+		.then(getPosts)
   }
   
