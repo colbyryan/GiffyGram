@@ -1,60 +1,53 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "userID": 1,
-      "title": "Laughing",
-      "timestamp": 156169011812,
-      "imageURL": "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif"
+      "name": "Brenda",
+      "dateJoined": 1630513631166,
+      "email": "brenda.long@nashvillesoftwareschool.com"
     },
     {
       "id": 2,
-      "userID": 2,
-      "title": "Ron Swanson",
-      "timestamp": 156169011812,
-      "imageURL": "https://media.giphy.com/media/WdxgDkavCuY56Of9jq/giphy.gif"
+      "name": "Bryan",
+      "dateJoined": 1630513631183,
+      "email": "bryan@nashvillesoftwareschool.com"
     },
     {
-      "title": "This Is Funny",
-      "imageURL": "https://media.giphy.com/media/J1rLvH8YizWFy/giphy.gif",
-      "description": "Meme",
-      "userId": 1,
-      "timestamp": 1631129225172,
-      "id": 3
-    },
-    {
-      "title": "Nice Meme",
-      "imageURL": "https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif",
-      "description": "Hello",
-      "userId": 1,
-      "timestamp": 1631129404774,
+      "name": "Tyler",
+      "dateJoined": 1630513631183,
+      "email": "tyler@nashvillesoftwareschool.com",
       "id": 4
     },
     {
-      "title": "Harden",
-      "imageURL": "https://media.giphy.com/media/ywa589qjyKmr6NrHmg/giphy.gif",
-      "description": "This looks good!",
-      "userId": 1,
-      "timestamp": 1631129855999,
+      "name": "Susie",
+      "dateJoined": 1630513631183,
+      "email": "susie@nashvillesoftwareschool.com",
       "id": 5
     },
     {
-      "title": "Nice",
-      "imageURL": "https://media.giphy.com/media/WJjLyXCVvro2I/giphy.gif",
-      "description": "No story ",
-      "userId": 1,
-      "timestamp": 1631130075385,
+      "name": "Susie",
+      "dateJoined": 1630513631183,
+      "email": "susie@nashvillesoftwareschool.com",
       "id": 6
     }
   ],
-  "comments": [
+  "posts": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "This will be amazing",
+      "imageURL": "https://media.giphy.com/media/88iYsvbegSUn9bSTF8/giphy.gif",
+      "description": "No story here",
+      "userId": 1,
+      "timestamp": 1631130005197,
+      "id": 1
+    },
+    {
+      "title": "This shouldn't work",
+      "imageURL": "https://media.giphy.com/media/Rgss7R0Ey0rAY/giphy.gif",
+      "description": "",
+      "userId": 1,
+      "timestamp": 1631131000311,
+      "id": 2
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "messages": []
 }

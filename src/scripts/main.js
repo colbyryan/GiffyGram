@@ -1,53 +1,60 @@
-// Can you explain what is being imported here?
-import { getPosts, usePostCollection, createPost } from "./data/DataManager.js"
-import { PostList } from "./feed/PostList.js"
+import { getPosts, getUsers, usePostCollection, createPost, deletePost } from "./Data/DataManager.js";
+import { PostList } from "./feed/PostList.js";
 import { NavBar } from "./Nav/NavBar.js";
-import { FooterBar } from "./Footer/Footer.js";
+import { Footer } from "./Footer/Footer.js";
 import { PostEntry } from "./feed/PostEntry.js";
+
+
+let yearSelected = 2021; //default
 
 const showPostList = () => {
 	//Get a reference to the location on the DOM where the list will display
 	const postElement = document.querySelector(".postList");
-	getPosts().then((allPosts) => {
-		postElement.innerHTML = PostList(allPosts);
+	getPosts()
+	.then((allPosts) => {
+		postElement.innerHTML = PostList(allPosts.reverse());
 	})
 }
+
 const showNavBar = () => {
+    //Get a reference to the location on the DOM where the nav will display
     const navElement = document.querySelector("nav");
-    navElement.innerHTML =NavBar();
+	navElement.innerHTML = NavBar();
 }
 
-const showFooterBar = () => {
-	const footerElement = document.querySelector("footer")
-	footerElement.innerHTML = FooterBar();
+const showFooter = (yearSelected) => {
+	const footerElement = document.querySelector("footer");
+	footerElement.innerHTML = Footer(yearSelected)
+  }
+
+const showPostEntry = () => { 
+	//Get a reference to the location on the DOM where the nav will display
+	const entryElement = document.querySelector(".entryForm");
+	entryElement.innerHTML = PostEntry();
 }
+
+  
+
 const applicationElement = document.querySelector(".giffygram");
 
-applicationElement.addEventListener("click", event => {
+// applicationElement.addEventListener("click", event => {
+// 	console.log("what was clicked", event)
+// 	if (event.target.id === "logout"){
+// 		console.log("You clicked on logout")
+// 	}
+// })
+
+const handleGiffyClick = (event) => {
+	console.log("what was clicked", event)
 	if (event.target.id === "logout"){
 		console.log("You clicked on logout")
 	}
-})
+}
 
-applicationElement.addEventListener("click", (event) => {
-	
-	if (event.target.id.startsWith("edit")){
-		console.log("post clicked", event.target.id.split("--"))
-		console.log("the id is", event.target.id.split("--")[1])
-	}
-})
-applicationElement.addEventListener("change", event => {
-	if (event.target.id === "yearSelection") {
-	  const yearAsNumber = parseInt(event.target.value)
-	  console.log(`User wants to see posts since ${yearAsNumber}`)
-	  //invoke a filter function passing the year as an argument
-	  showFilteredPosts(yearAsNumber);
-	}
-  })
-  
-  const showFilteredPosts = (year) => {
+const showFilteredPosts = (year) => {
 	//get a copy of the post collection
 	const epoch = Date.parse(`01/01/${year}`);
+	console.log("epoch", epoch);
 	//filter the data
 	const filteredData = usePostCollection().filter(singlePost => {
 	  if (singlePost.timestamp >= epoch) {
@@ -83,22 +90,48 @@ applicationElement.addEventListener("change", event => {
 	// be sure to import from the DataManager
 		createPost(postObject)
 		.then(dbResponse => {
+			console.log("dbResponse", dbResponse)
 			showPostList()
 		});
 	}
   })
-  const showPostEntry = () => { 
-	//Get a reference to the location on the DOM where the nav will display
-	const entryElement = document.querySelector(".entryForm");
-	entryElement.innerHTML = PostEntry();
-  }
+
+  applicationElement.addEventListener("click", event => {
+	event.preventDefault();
+	if (event.target.id.startsWith("delete")) {
+	  const postId = event.target.id.split("__")[1];
+	  deletePost(postId)
+		.then(response => {
+		  showPostList();
+		})
+	}
+  })
+  
+
+
+applicationElement.addEventListener("click", (event) => {
+	if (event.target.id.startsWith("edit")){
+		console.log("post clicked", event.target.id.split("--"))
+		console.log("the id is", event.target.id.split("--")[1])
+	}
+})
+
+applicationElement.addEventListener("change", event => {
+	if (event.target.id === "yearSelection") {
+	  const yearAsNumber = parseInt(event.target.value)
+	  console.log(`User wants to see posts since ${yearAsNumber}`)
+	  showFilteredPosts(yearAsNumber);
+	}
+  })
+
+applicationElement.addEventListener("click", handleGiffyClick)
+
 
 const startGiffyGram = () => {
-    showNavBar();
+	showNavBar();
 	showPostEntry();
 	showPostList();
-	showFooterBar();
-	
+	showFooter(yearSelected);
 }
 
 startGiffyGram();
